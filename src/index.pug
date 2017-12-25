@@ -1,0 +1,46 @@
+extends pug/base
+prepend vars 
+	- title = 'ServiceMaster Restoration By Simons' 
+	- description = "Fire & Water Damage Restoration Chicago IL. Immediately call ServiceMaster Restoration By Simons at 773-376-1110. We are Chicago's leader in Water"
+	-var socio = [{link:"https://www.facebook.com/ServicemasterRestorationBySimons", name:"fa fa-facebook"}, {link:"http://www.yelp.com/biz/servicemaster-restoration-by-simons-chicago", name:"fa fa-yelp"}, {link:"https://plus.google.com/+ServiceMasterRestorationbySimonsChicago/about?partnerid=gplp0", name:"fa fa-google-plus"}, {link:"https://www.youtube.com/user/RestorationBySimons/", name:"fa fa-youtube"}, {link:"http://www.linkedin.com/company/2997771?trk=vsrp_companies_res_name&trkInfo=VSRPsearchId%3A1691143351383319451684%2CVSRPtargetId%3A2997771%2CVSRPcmpt%3Aprimary", name:"fa fa-linkedin"}];
+	- var links = ["Home","About us", "Special offers", "Whet's new", "FAQ", "Gallery"];
+	- var menuItem = ["services", "commercial cleaning", "residential cleaning", "disaster cleaning", "service areas", "blog", "contact us"];
+	
+append vars
+	- html.classList.push('page-index')
+
+block content
+	header.main-head
+		div.main-head__top.top-line
+			div.container
+				div.top-line__wrapper
+					div.top-line__socio.top-line-socio
+						for prop in socio
+							a(class="top-line-socio__link" href=prop.link)
+								i(class=prop.name)
+					nav.top-line__menu.top-line-menu
+						ul.top-line-menu__list
+							each link in links
+								li.top-line-menu__item
+									a.top-line-menu__link #{link}
+					form(class="top-line__search top-line-search" id="main-search" method="get" role="search")
+						input(class="top-line-search__input" required type="text" placeholder="Search")
+						button(class="top-line-search__btn" type="submit") 
+		div.container
+			div.main-head__title-line.head-title-line
+				a(class="head-title-line__elem head-title-line__logo" href="/")
+					img(alt="ServiceMaster" src="images/header-logo.gif")
+				a(class="head-title-line__phone" href="tel:773 376 1110")
+					i.fa.fa-phone
+					span 773 376 1110
+				a(class="head-title-line__btn-help" href="/contact-us")
+					span need urgent help?
+		div.container
+			div.main-head__menu.main-head-menu
+				nav.main-head-menu__nav
+					ul.main-head-menu__list#menu-list
+						each item in menuItem
+							li(class="main-head-menu__item" id=item)
+								a.main-head-menu__link #{item}
+
+						

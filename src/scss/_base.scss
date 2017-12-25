@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+html, body{
+	width: 100%;
+	min-width: 320px;
+	overflow-x: hidden;
+	font-family: "Helvetica", sans-serif;
+}
+body{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	min-height: 100vh;
+}
+a{
+	color: $color-white;
+	cursor: pointer;
+	&:hover, &:focus{
+		text-decoration: underline;
+		color: $color-white;
+
+	}
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.no-before{
+	&:before{
+		display: none;
+	}
+}
+.no-after{
+	&:after{
+		display: none;	
+	}
+}
+.fl_aic_jcsb{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.fl_aic_jcc{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.fl_aifs_jcc{
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+

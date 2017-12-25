@@ -1,0 +1,18 @@
+@import "mixins/retina";
+@import "mixins/sprites";
+@import "mixins/triangle";
+@import "mixins/media";
+@import "mixins/_font-face";
+
+@mixin interface_btn($width, $color, $font-family, $font-size, $letter-spacing, $text-decor, $border-color){
+	width: $width;
+	color: $color;
+	font-family: $font-family;
+	font-size: em($font-size);
+	letter-spacing: $letter-spacing;
+	border: 2px solid $border-color;
+	&:hover{
+		color: $color;
+		text-decoration: $text-decor;
+	}
+}

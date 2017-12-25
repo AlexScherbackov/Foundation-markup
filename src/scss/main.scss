@@ -1,0 +1,194 @@
+// stylelint-disable at-rule-empty-line-before
+
+@import "variables";
+@import "functions";
+@import "mixins";
+@import "sprites";
+@import "fonts";
+@import "vendor";
+@import "base";
+
+.main-head{
+	display: block;
+	position: relative;
+}
+
+.top-line{
+	@extend .fl_aic_jcc;
+	min-height: 45px;
+	background-color: $color-black;
+	&__wrapper{
+		@extend .fl_aic_jcsb;
+	}
+	&__search{
+		width: 180px;
+	}
+}
+
+.top-line-menu{
+	min-width: 320px;
+	&__list{
+		@extend .fl_aic_jcsb;
+	}
+	&__item{
+		border-right: 1px solid $color-white;
+		padding: 0 8px;
+		&:last-child{
+			border: none;
+		}
+	}
+
+	&__link{
+		font-size: em(18);
+		display: block;
+		letter-spacing: 1px;
+		line-height: 100%;
+		
+	}
+
+}
+
+.top-line-socio{
+	@extend .fl_aic_jcsb;
+	max-width: 150px;
+	width: 100%;
+	&__link{
+		font-size: em(24);
+	}
+}
+
+.top-line-search{
+	user-select: text;
+	font-size: em(17);
+	line-height: 20px;
+	border-bottom: 1px solid $color-white;
+	@extend .fl_aic_jcsb;
+	&__input{
+		background-color: transparent;
+		border: none;
+		outline: none;
+		color: $color-white;
+		width: 160px;
+		padding-left: 5px;
+		&[placeholder], &::-webkit-input-placeholder{
+			color: $color-white;
+		}
+		&::-moz-placeholder, &:-ms-input-placeholder{
+			color: $color-white;
+		}
+	}
+	&__btn{
+		background-color: transparent;
+		height: 100%;
+		border: none;
+		outline: none;
+		&:before{
+			content: "\f002";
+    	font-family: FontAwesome;
+    	font-size: 12px;
+    	font-weight: 400;
+    	line-height: 20px;
+    	color: #fff;
+		}
+	}
+}
+
+.head-title-line{
+	@extend .fl_aic_jcsb;
+	padding: 15px 0;
+	&__logo{
+		width: 170px;
+		height: 75px;
+		display: block;
+		position: relative;
+		text-align: center;
+		img{
+			object-fit: cover;
+			max-width: 170px;
+		}
+	}
+	&__phone{
+		@extend .fl_aic_jcc;
+		@include interface_btn(240px, $color-black, $gotham, 27, 2px, none,  $color-energy-yellow);
+		height: 45px;
+		order: -1;
+		&>i{
+			margin-right: 5px;
+		}
+	}
+	&__btn-help{
+		@extend .fl_aic_jcc;
+		@include interface_btn(260px, $color-black, $gotham-book, 24, 3px, underline, $color-black);
+		height: 45px;
+		text-transform: uppercase;
+	}
+}
+
+.main-head-menu{
+	padding: 10px 25px;
+	position: relative;
+	&__nav{
+		display: block;
+	}
+	&__list{
+		@extend .fl_aic_jcsb;
+		
+	}
+	&__item{
+		
+	}
+	&__link{
+		display: block;
+		padding: 15px;
+		color: $color-black;
+		font-family: $gotham;
+		font-size: em(19);
+		text-transform: uppercase;
+		&:hover{
+			color: $color-black;
+			text-decoration: underline;
+		}
+		&.open{
+			background-color: $color-yellow;
+		}
+	}
+}
+
+.megamenu{
+	@extend .fl_aifs_jcc;
+	display: none;
+	position: absolute;
+	border-top: 3px solid $color-yellow;
+	background-color: rgba($color-black, .9);
+	z-index: 900;
+	width: 102vw;
+	left: -10%;
+	top: 50px;
+	padding: 35px 0;
+	&__list{
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		height: 100%;
+		max-height: 200px;
+	}
+	&__item{
+		display: block;
+		line-height: 100%;
+		padding: 5px 0;
+		max-width: 170px;
+	}
+	&__link{
+		font-family: $gotham;
+		font-size: em(18);
+		font-weight: normal;
+		line-height: 20px;
+		&:hover, &:focus{
+			text-decoration: none;
+			color: $color-yellow;
+		}
+	}
+	&.open{
+		display: flex;
+	}
+}
