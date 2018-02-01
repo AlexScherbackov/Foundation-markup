@@ -6,58 +6,106 @@
 
 html {
 	box-sizing: border-box;
+	line-height: 1.15;
+
 }
 
-html, body{
-	width: 100%;
-	min-width: 320px;
-	overflow-x: hidden;
-	font-family: "Helvetica", sans-serif;
-}
 body{
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-	min-height: 100vh;
-}
-a{
-	color: $color-white;
-	cursor: pointer;
-	&:hover, &:focus{
-		text-decoration: underline;
-		color: $color-white;
-
-	}
-}
-
-ul{
+	overflow-x: hidden;
+	min-width: 320px;
+	color: $color-light_black;
+	font-size: 16px;
 	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-.no-before{
-	&:before{
-		display: none;
-	}
-}
-.no-after{
-	&:after{
-		display: none;	
-	}
-}
-.fl_aic_jcsb{
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-.fl_aic_jcc{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.fl_aifs_jcc{
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
+	line-height: 1.75;
+	position: relative;
 }
 
+img{
+	width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+a{
+	display: block;
+	outline: none;
+	cursor: pointer;
+	&:focus{
+		outline: none;
+	}
+}
+//global flex classes
+.fl_aic_jcc{
+	@extend .d-flex;
+	@extend .align-items-center;
+	@extend .justify-content-center;
+}
+
+.fl_aic_jcsb{
+	@extend .d-flex;
+	@extend .align-items-center;
+	@extend .justify-content-between;	
+}
+
+.infl_aic_jcsb{
+	@extend .d-inline-flex;
+	@extend .align-items-center;
+	@extend .justify-content-around;
+}
+
+//global flex media
+.fl_md_jce{
+	@include max-screen(991px){
+		justify-content: flex-end!important;
+	}	
+}
+.fl_sm_jcc{
+	@include max-screen(991px){
+		justify-content: center!important;
+	}	
+}
+
+.link{
+	color: $color-white;
+	font-family: $main_text-font, sans-serif;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.btn{
+	padding: 0px 17px;
+	text-transform: uppercase;
+	text-decoration: none;
+	user-select: none;
+	line-height: 50px;
+	letter-spacing: 2px;
+	font-size: em(24px);
+	font-family: $main_text-font, sans-serif;
+	color: $color-white;
+	transition: 0.2s;
+	&:hover{
+		text-decoration: underline;
+	}
+	&--blue{
+		background-color: $cl1;
+		color: rgba($color-white, 0.5);
+		&:hover{
+			background-color: $cl1-hover;
+			color: $color-white;
+		}
+	}
+}
+
+
+//Global media classes
+.hidden-md{
+	@include max-screen(991px){
+		display: none!important;
+	}
+}
+.hidden-md-up{
+	@include max-screen(991px){
+		display: block!important;
+	}
+}

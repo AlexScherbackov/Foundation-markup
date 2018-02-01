@@ -2,16 +2,34 @@
 
 // COLORS
 
-$color-black: #000;
+$color-light_black: #333333;
 $color-white: #fff;
-$color-yellow: #ffee50;
-$color-energy-yellow: #f7e74d;
-$color-gray: #f8f8f8;
+$color-shauma: #998543;
+$color-shauma-light: #af9c5d;
+$color-darc_blue: #111F2c;
+$color-deep_blue: #0B4A8E;
+$color-deep-blue-hover: #1259a6;
+
+
+// PALITRA
+$akcent_cl: $color-shauma;
+$theme_cl: $color-darc_blue;
+$cl1: $color-deep_blue;
+$cl1-hover: $color-deep-blue-hover;
+$cl2: $color-light_black;
+$cl3: $color-white;
+$border_cl: $color-shauma-light;
 
 // FONTS
-$base-font-size: 16;
-$din-medium : "DIN-medium";
-$gotham : "Gotham";
-$gotham-book : "Gotham-book";
+$gothic: 'Gothic';
+$marketing: 'MarketingScript';
+$merriweather: 'Merriweather';
+
+//FONTS FOR THEME
+$main_header-font: $marketing;
+$main_text-font: $gothic;
+$text-font: $merriweather;
 
 
+//SIZES
+$base-font-size: 16px;

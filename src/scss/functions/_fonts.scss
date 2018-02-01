@@ -15,3 +15,8 @@
 
 	@return $string;
 }
+
+
+@function em($px){
+	@return $px / $base-font-size + 0rem;
+}
