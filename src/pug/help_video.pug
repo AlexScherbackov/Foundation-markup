@@ -1,0 +1,12 @@
+section.help-video
+	div.container
+		h2.base-title helpful videos
+		span.base-subtitle Lorem ipsum dolor sit amet, veri iudico phaedrum an vim. Mea viris tritani id, pro esse omnesque tincidunt te. 
+		div.help-video__content
+			div.row
+				each item in helpVideos
+					div.col-md-4
+						div.help-video__item
+							div.help-video__poster
+								img(src=item.img)
+							span.help-video__title #{item.title}

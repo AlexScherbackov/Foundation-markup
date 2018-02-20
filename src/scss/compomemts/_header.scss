@@ -1,0 +1,129 @@
+.header-main{
+	&__carousel{
+		position: relative;
+		max-height: 650px;
+		overflow: hidden;
+	}
+}
+.carousel{
+	&__item{
+		position: relative;
+		height: 100%;
+		max-height: 650px;
+		min-height: 480px;
+	}
+	&__img-wrapper{
+		position: relative;
+		height: 100%;
+		overflow: hidden;
+		object-fit: cover;
+	}
+	&__img{
+		min-height: 485px;
+	}
+	&__outer-content{
+		position: absolute;
+		top: 50%;
+		margin-top: -160px;
+		//left: 10%;
+		max-width: 485px;
+		z-index: 100;
+		&:before{
+			position: absolute;
+			display: block;
+			content: '';
+			opacity: .6;
+			top: 0;
+			left: 0;
+		}
+		@include max-screen(991px){
+			margin-top: -120px;
+		}
+		@include max-screen(670px){
+			margin-top: 0;
+			top:0;
+			left: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			max-width: 100%;
+			height: 100%;
+		}
+	}
+	&__content{
+		display:flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		max-width: 485px;
+		color: $cl3;
+	}
+	&__title{
+		font-size: em(64px);
+		font-weight: 400;
+		font-family: $main_header-font, sans-serif;
+		margin-top: 0;
+		margin-bottom: 5px;
+		line-height: 52px;
+		letter-spacing: 1px;
+	}
+	&__subtitle{
+		font-size: em(22px);
+		font-weight: 400;
+		line-height: 20px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin-top: 0;
+		margin-bottom: 0;
+		font-family: $main_text-font, sans-serif;
+	}
+	&__text{
+		opacity: .8;
+		font-size: em(15px);
+		font-weight: 400;
+		line-height: 24px;
+		font-family: $text-font, sans-serif;
+	}
+	&__btn{
+		max-width: 140px;
+	}
+	&__dots-wrapper{
+		position: absolute;
+		bottom: 53%;
+		right: 5%;
+		z-index: 100;
+		@include max-screen(767px){
+			bottom: 45%;
+		}
+		@include max-screen(670px){
+			bottom: 10%;
+			right: 45%;
+		}
+	}
+	&__dots{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			width: 40px;
+			height: 40px;
+			@include max-screen(670px){
+				flex-direction: row;
+			}
+		& > .owl-dot{
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background-color: $cl3;
+			transition: 0.3s;
+			cursor: pointer;
+			&.active{
+				background-color: $color-shauma-light;
+				opacity: 0.67;
+				width: 10px;
+				height: 10px;
+			}
+		}
+	}
+}

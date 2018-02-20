@@ -1,0 +1,19 @@
+section.gallery#gallery
+	div.container
+		h2.base-title gallery
+		span.base-subtitle Great homes don’t just happen. They require careful planning, attention to detail, and quality workmanship
+		div.gallery__content
+			h3.base-title.base-title--type2.base-title--blue HOMES UNDER CONSTRACTION
+			div.gallery__collapse-wrapper
+				div.row
+					each item in galleryContent
+						div.col-md-4
+							div.gallery__item
+								div.gallery__poster
+									img(src=item.img)
+								div.gallery__project-info
+									h2.base-title.base-title--type2.base-title--white #{item.title}
+									p.gallery__item-text #{item.text}
+									a.gallery__item-link view project
+
+			button#gallary-trigger.gallery__btn.btn.btn--yellow view all projects

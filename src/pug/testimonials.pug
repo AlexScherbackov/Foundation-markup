@@ -1,0 +1,19 @@
+section.testimonials#reviews
+		h4.base-title.base-title--type2.testimonials__title what people say
+		div.container
+			div.testimonials__content.fl_aic_jcsb
+				div.testimonials__control.owl-nav
+					a.testimonials__link.testimonials__control--left(href="#" )
+						img(src="../images/arrow-l.svg")
+			
+				div.testimonials__slider.owl-carousel
+					each slide in testimonials
+						div.testimonials__slide
+							p.testimonials__text #{slide.text}
+							span.testimonials__author #{slide.author}
+				div.testimonials__control.owl-nav
+					a.testimonials__link.testimonials__control--right(href="#" )
+						img(src="../images/arrow-r.svg")
+
+								
+							

@@ -3,12 +3,15 @@
 // COLORS
 
 $color-light_black: #333333;
+$color-semi_darc: #111f2c;
 $color-white: #fff;
+$color-gray: #e8e8e8;
 $color-shauma: #998543;
 $color-shauma-light: #af9c5d;
 $color-darc_blue: #111F2c;
 $color-deep_blue: #0B4A8E;
 $color-deep-blue-hover: #1259a6;
+$color-glass-acua: #9bc6f5;
 
 
 // PALITRA
@@ -18,7 +21,11 @@ $cl1: $color-deep_blue;
 $cl1-hover: $color-deep-blue-hover;
 $cl2: $color-light_black;
 $cl3: $color-white;
+$cl4: $color-gray;
 $border_cl: $color-shauma-light;
+$base_title_cl: $color-light_black;
+$gallery_hover_cl: $color-semi_darc;
+$gallery_link_cl: $color-glass-acua;
 
 // FONTS
 $gothic: 'Gothic';

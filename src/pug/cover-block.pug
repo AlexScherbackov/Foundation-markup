@@ -1,0 +1,29 @@
+section.cover-block#about
+	div.container-fluid
+		- for(var i = 0; i< coverBlock.length; i++)  
+			if(i % 2 == 0)
+				div.row
+					div.cover-block__item.cover-block__poster
+						img.cover-block__img(src=coverBlock[i].poster)
+					div.cover-block__item
+						div.cover-block__text-container
+							h3.cover-block__title.base-title.base-title--type1 #{coverBlock[i].title}
+							
+							if((typeof coverBlock[i].text).toLowerCase() == 'object')
+								p.cover-block__text
+									span #{coverBlock[i].text.title} 
+									br
+									span #{coverBlock[i].text.addres} 
+									br
+									a.cover-block__link(href="mailto:" + coverBlock[i].text.link) #{coverBlock[i].text.link}
+									a.cover-block__link.cover-block__link--black(href=coverBlock[i].text.tel) #{coverBlock[i].text.tel}
+							else
+								p.cover-block__text #{coverBlock[i].text}
+			else
+				div.row
+					div.cover-block__item
+						div.cover-block__text-container
+							h3.cover-block__title.base-title.base-title--type1 #{coverBlock[i].title}
+							p.cover-block__text #{coverBlock[i].text}
+					div.cover-block__item.cover-block__poster
+						img.cover-block__img(src=coverBlock[i].poster)

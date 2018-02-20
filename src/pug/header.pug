@@ -1,0 +1,19 @@
+header.header-main
+	div.header-main__carousel
+		div.carousel.owl-carousel
+			each obj in headerContent
+				div.carousel__item
+					div.container 
+						div.carousel__outer-content
+							div.carousel__content
+								h2.carousel__title #{obj.title}
+								h3.carousel__subtitle #{obj.subtitle}
+								p.carousel__text #{obj.text}
+								a.btn.btn--yellow.carousel__btn(href="") Learn more
+					div.carousel__img-wrapper
+						img.carousel__img(src=obj.img)
+		div.carousel__dots-wrapper
+			div.container
+				div.carousel__dots
+
+

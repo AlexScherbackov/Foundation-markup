@@ -1,0 +1,28 @@
+.help-video{
+	background-color: $cl4;
+	padding: 90px 0;
+	&__content{
+		margin-top: 63px;
+	}
+	&__item{
+		cursor: pointer;
+	}
+	&__poster{
+		position: relative;
+		object-fit: cover;
+		border-radius: 6px;
+		box-shadow: 0 6px 23px rgba(0,0,0,.1);
+	}
+	&__title{
+		display: block;
+		color: $cl2;
+		font-family: $main_text-font, sans-serif;
+		font-size: em(32px);
+		font-weight: 400;
+		letter-spacing: 2px;
+		line-height: 24px;
+		text-transform: uppercase;
+		text-align: center;
+		margin-top: 20px;
+	}
+}

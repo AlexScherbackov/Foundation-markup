@@ -1,0 +1,91 @@
+.testimonials{
+	background-color: $cl1;
+	position: relative;
+	padding: 110px 0;
+	min-height: 600px;
+	&__title{
+		color: $cl3;
+		margin-top: 40px;
+		margin-bottom: 60px;
+		position: relative;
+		display: block;
+		&:after{
+			content:"";
+			position: absolute;
+			margin-top: -45px;
+			transform: translateX(-140%);
+			height: 80px;
+			width: 99px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+			background-image: url(../images/quotes.svg);
+			opacity: 0.21;
+		}
+	}
+	&__slider{
+		max-width: 767px;
+		width: 100%;
+		position: relative;
+		margin: auto;
+	}
+	&__text{
+		//display: block;
+		max-width: 767px;
+		width: 100%;
+		color: $cl3;
+		font-family: $text-font, sans-serif;
+		font-size: em(24px);
+		font-style: italic;
+		line-height: 38px;
+		text-align: center;
+		overflow-y: hidden;
+		margin-bottom: 30px;
+	}
+	&__author{
+		display: block;
+		color: $cl3;
+		font-family: $main_text-font, sans-serif;
+		text-align: center;
+		font-size: em(24px);
+		font-weight: 400;
+		opacity: 0.5;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+	&__control{
+		height: 100%;
+		display: flex;
+		align-items: center;
+	}
+	&__link{
+		opacity: 0.7;
+		transition: 0.3s;
+		width: 70px;
+		height: 70px;
+		margin-top: -20px;
+		&:hover{
+			opacity: 1;
+		}
+	}
+	&__readmore-link{
+		position: absolute;
+		display: inline-block;
+		width: 190px;
+		bottom: 69px;
+		right: 0;
+		line-height: 38px;
+		color:  #85a4c6;
+		font-family: $text-font, sans-serif;
+		font-style: italic;
+		background: linear-gradient(to right,rgba(11,74,142,0) 0,#0b4a8e 40%);
+		font-size: em(14.4px);
+		padding-left: 80px;
+		transition: color 0.2s;
+		cursor: pointer;
+		&:hover{
+			color: $cl3;
+		}
+	}
+}
+

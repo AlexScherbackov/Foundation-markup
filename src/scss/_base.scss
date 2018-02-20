@@ -19,11 +19,14 @@ body{
 	line-height: 1.75;
 	position: relative;
 }
-
+article, aside, footer, header, nav, section {
+ display: block;
+}
 img{
 	width: 100%;
 	height: auto;
 	vertical-align: middle;
+	display: block;
 }
 
 a{
@@ -46,7 +49,11 @@ a{
 	@extend .align-items-center;
 	@extend .justify-content-between;	
 }
-
+.fl_aic_jcsa{
+	@extend .d-flex;
+	@extend .align-items-center;
+	@extend .justify-content-around;	
+}
 .infl_aic_jcsb{
 	@extend .d-inline-flex;
 	@extend .align-items-center;
@@ -60,10 +67,27 @@ a{
 	}	
 }
 .fl_sm_jcc{
-	@include max-screen(991px){
+	@include max-screen(767px){
 		justify-content: center!important;
 	}	
 }
+.fl_sm_jcsb{
+		@include max-screen(767px){
+		justify-content: space-between!important;
+	}	
+}
+.fl_670_jcc{
+	@include max-screen(670px){
+		justify-content: center!important;
+	}
+}
+.full-670{
+	@include max-screen(670px){
+		flex: 0 0 100%;
+		max-width: 100%!important;
+	}
+}
+
 
 .link{
 	color: $color-white;
@@ -84,6 +108,7 @@ a{
 	font-family: $main_text-font, sans-serif;
 	color: $color-white;
 	transition: 0.2s;
+	text-align: center;
 	&:hover{
 		text-decoration: underline;
 	}
@@ -93,6 +118,22 @@ a{
 		&:hover{
 			background-color: $cl1-hover;
 			color: $color-white;
+		}
+	}
+	&--yellow{
+		background-color: $color-shauma-light;
+		color: rgba($color-white, 0.7);
+		&:hover{
+			background-color: $color-shauma;
+			color: $color-white;
+		}
+	}
+	&--transparent{
+		color: rgba($cl3, 0.5);
+		letter-spacing: 2px;
+		border: 1px solid $cl3;
+		&:hover{
+			color: $cl3;
 		}
 	}
 }
@@ -107,5 +148,12 @@ a{
 .hidden-md-up{
 	@include max-screen(991px){
 		display: block!important;
+	}
+}
+
+.container{
+	@include max-screen(768px){
+		width: 100%;
+		max-width: 100%;
 	}
 }

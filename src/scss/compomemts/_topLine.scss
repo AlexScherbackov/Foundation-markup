@@ -1,0 +1,159 @@
+
+.top-line{
+	min-height: 80px;
+	width: 100%;
+	background-color: $theme_cl;
+	position: relative;
+	box-shadow: 0 4px 0 0 rgba($color-white, .2);
+	padding: 12px 0px;
+	&__logo-link{
+		@extend .fl_aic_jcc;
+	}
+	&__logo-img{
+		width: 75%;
+		@include max-screen(992px){
+			width: 100%;
+		}
+		@include max-screen(670px){
+			max-width: 150px;
+			margin-bottom: 15px;
+		}
+		
+	}
+	&__nav{
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	&__warranty{
+		width: 70px;
+		@include max-screen(991px){
+			margin-right: 20px;
+		}
+		@include max-screen(670px){
+			width: 80px;
+		}
+		@include max-screen(480px){
+			display: none;
+		}
+	}
+	&__phone{
+		@extend .link;
+		font-size: em(28px);
+		margin-top: 10px;
+		&:hover{
+			text-decoration: underline;
+		}
+		@include max-screen(991px){
+			margin-right: 20px;
+		}
+		
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn--blue;
+		margin-top: 0px;
+		@include max-screen(991px){
+			margin-right: 20px;
+		}
+		@include max-screen(480px){
+			display: none;
+		}		
+	}
+	&__mobile-menu-btn{
+		@extend .fl_aic_jcc;
+		position: relative;
+		height: 25px;
+		flex-direction: column;
+		transition: .8s ease-in-out;
+		margin-top: 5px;
+		&.open{
+			&>*{
+				&:nth-child(1){
+					-webkit-transform: rotate(45deg);
+					-moz-transform: rotate(45deg);
+					-o-transform: rotate(45deg);
+					transform: rotate(45deg);
+					top: 10px;
+				}
+				&:nth-child(2) {
+					width: 0%;
+					opacity: 0;
+				}
+				&:nth-child(3) {
+					-webkit-transform: rotate(-45deg);
+					-moz-transform: rotate(-45deg);
+					-o-transform: rotate(-45deg);
+					transform: rotate(-45deg);
+					top: -8px
+				}
+			}
+		}
+	}
+}
+
+.navigate{
+	&__item{
+		display: block;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 10px;
+		&:first-child{
+			padding-left: 0;
+		}
+	}
+	&__link{
+		@extend .link;
+		opacity: 0.7;
+		font-size: em(22px);
+		border-bottom: 3px solid transparent;
+		transition: 0.3s;
+		&:hover{
+			opacity: 1;
+			border-color: $border_cl;
+		}
+	}
+
+}
+
+.mobile-menu-btn{
+	display: block;
+	position: relative;
+	height: 4px;
+	width: 28px;
+	border-radius: 2px;
+	background-color: $color-white;
+	backface-visibility: hidden;
+	transition: 0.5s;
+	margin-bottom: 5px;
+	&:nth-child(3){
+		margin-bottom: 0;
+	}
+	
+}
+
+.mobile_menu{
+	display: none;
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	background-color: rgba(17,31,44,.95);
+	z-index: 200;
+	&__link{
+		@extend .link;
+		opacity: 0.7;
+		font-size: em(24px);
+		border-bottom: 1px solid transparent;
+		transition: 0.3s;
+		line-height: 1;
+
+		&:hover{
+			border-color: $color-white;
+		}
+	}
+	&.open{
+		display: flex;
+	}
+
+}

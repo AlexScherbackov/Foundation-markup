@@ -1,0 +1,14 @@
+section.custom-build
+	div.container
+		h2.base-title.custom-build__title YOUR CUSTOM BUILD PROCESS
+		div.row
+			each item in customBuild
+				div.col-lg-4.col-md-6.custom-build__wrapper
+					div.custom-build__item
+						h3.base-title.base-title--type2.custom-build__item-title #{item.title}
+						if( Array.isArray(item.text))
+							ol.custom-build__text.custom-build__list
+								each el in item.text
+									li #{el}
+						else	
+							p.custom-build__text #{item.text}

@@ -1,0 +1,19 @@
+footer.main-footer
+	div.container
+		div.row
+			div.col-lg-2.col-md-2.col-sm-12
+				a.main-footer__logo(href='/')
+					img.main-footer__img(src='../images/FHR-LOGO-1.png')
+			div.col-lg-6.col-md-5.col-sm-12
+				ul.main-foot__nav.fl_aic_jcc.navigate
+					each href, prop in nav
+						li.navigate__item
+							a.navigate__link(href = href) #{prop}
+			div.col-lg-4.col-md-5.col-sm-12
+				div.main-footer__copyright
+					p
+						span Copyright © 2017 Foundation Homes.
+						span  &nbsp;All Rights Reserved.
+					p 
+						span Design by 
+						a.main-footer__copyright-link(href='/') Comrade Web Agency

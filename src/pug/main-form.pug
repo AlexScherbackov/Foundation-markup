@@ -1,0 +1,21 @@
+section.main-form#contact
+	div.container
+		div.fl_aic_jcc.main-form__wrap
+			form.base-form.main-form__form
+				h3.base-title.main-form__title Get In Touch
+				div.main-form__cont
+					each item in mainForm
+						if(item.tag == 'input')
+							if(item.type == 'submit')
+								div.main-form__btn-cont.fl_aic_jcc.form-group
+									input(type=item.type name=item.name class=item.classList placeholder=item.placeholder size=item.size value=item.value)
+							else
+								div.form-group
+									input(type=item.type name=item.name class=item.classList placeholder=item.placeholder size=item.size value=item.value)
+									if(item.required)
+										span.main-form__required *The field is required.
+						else if(item.tag == 'textarea')
+							div.form-group
+								textarea(class=item.classList name=item.name placeholder=item.placeholder cols=item.cols rows=item.rows)
+								if(item.required)
+									span.main-form__required *The field is required.
