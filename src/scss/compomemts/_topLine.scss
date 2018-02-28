@@ -11,14 +11,13 @@
 	}
 	&__logo-img{
 		width: 75%;
-		@include max-screen(992px){
+		max-width: 150px;
+		@include max-screen(991px){
 			width: 100%;
 		}
 		@include max-screen(670px){
-			max-width: 150px;
-			margin-bottom: 15px;
+			margin-bottom: 10px;
 		}
-		
 	}
 	&__nav{
 		height: 100%;
@@ -29,14 +28,9 @@
 	&__warranty{
 		width: 70px;
 		@include max-screen(991px){
-			margin-right: 20px;
+			margin-right: 10px;
 		}
-		@include max-screen(670px){
-			width: 80px;
-		}
-		@include max-screen(480px){
-			display: none;
-		}
+		
 	}
 	&__phone{
 		@extend .link;
@@ -46,20 +40,20 @@
 			text-decoration: underline;
 		}
 		@include max-screen(991px){
-			margin-right: 20px;
+			margin-right: 10px;
 		}
-		
+			
 	}
 	&__btn{
 		@extend .btn;
 		@extend .btn--blue;
-		margin-top: 0px;
+		margin-top: 5px;
 		@include max-screen(991px){
-			margin-right: 20px;
+			margin-right: 10px;
 		}
 		@include max-screen(480px){
 			display: none;
-		}		
+		}				
 	}
 	&__mobile-menu-btn{
 		@extend .fl_aic_jcc;
@@ -140,6 +134,9 @@
 	position: absolute;
 	background-color: rgba(17,31,44,.95);
 	z-index: 200;
+	&__wrap{
+		height: 100%;	
+	}
 	&__link{
 		@extend .link;
 		opacity: 0.7;
@@ -147,13 +144,15 @@
 		border-bottom: 1px solid transparent;
 		transition: 0.3s;
 		line-height: 1;
-
+		@include max-screen(480px){
+			font-size: em(20px);
+		}
 		&:hover{
 			border-color: $color-white;
 		}
 	}
 	&.open{
-		display: flex;
+		display: block;
 	}
 
 }

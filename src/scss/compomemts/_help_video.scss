@@ -1,17 +1,30 @@
 .help-video{
 	background-color: $cl4;
 	padding: 90px 0;
+	@include max-screen(991px){
+		padding: 60px 0px 20px;
+	}
+	@include max-screen(480px){
+		padding: 40px 0px;
+	}
 	&__content{
 		margin-top: 63px;
+	}
+	&__wrapp{
+	margin-bottom: 40px;
 	}
 	&__item{
 		cursor: pointer;
 	}
 	&__poster{
 		position: relative;
+
 		object-fit: cover;
 		border-radius: 6px;
 		box-shadow: 0 6px 23px rgba(0,0,0,.1);
+	}
+	&__img{
+		max-height: 380px;
 	}
 	&__title{
 		display: block;

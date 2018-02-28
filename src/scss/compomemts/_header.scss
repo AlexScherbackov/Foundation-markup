@@ -8,18 +8,28 @@
 .carousel{
 	&__item{
 		position: relative;
-		height: 100%;
-		max-height: 650px;
-		min-height: 480px;
+		height: 620px;
+		@include max-screen(991px){
+			height: 480px;
+		}
+		@include max-screen(480px){
+			height: 420px;
+		}
+		@include max-screen(380px){
+			height: 320px;
+		}
 	}
 	&__img-wrapper{
 		position: relative;
 		height: 100%;
 		overflow: hidden;
 		object-fit: cover;
+		object-position: center center;
+	
 	}
 	&__img{
 		min-height: 485px;
+		height: 100%;
 	}
 	&__outer-content{
 		position: absolute;
@@ -58,6 +68,10 @@
 		justify-content: center;
 		max-width: 485px;
 		color: $cl3;
+		@include max-screen(670px){
+			text-align: center;
+			align-items: center;
+		}
 	}
 	&__title{
 		font-size: em(64px);
@@ -67,6 +81,9 @@
 		margin-bottom: 5px;
 		line-height: 52px;
 		letter-spacing: 1px;
+		@include max-screen(480px){
+			font-size: em(48px);
+		}
 	}
 	&__subtitle{
 		font-size: em(22px);
@@ -77,6 +94,12 @@
 		margin-top: 0;
 		margin-bottom: 0;
 		font-family: $main_text-font, sans-serif;
+		@include max-screen(480px){
+			font-size: em(18px);
+			margin-bottom: 20px;
+			margin-top: 20px;
+			max-width: 300px;
+		}
 	}
 	&__text{
 		opacity: .8;
@@ -84,6 +107,9 @@
 		font-weight: 400;
 		line-height: 24px;
 		font-family: $text-font, sans-serif;
+		@include max-screen(480px){
+			display: none;
+		}
 	}
 	&__btn{
 		max-width: 140px;
@@ -98,7 +124,14 @@
 		}
 		@include max-screen(670px){
 			bottom: 10%;
-			right: 45%;
+			right: 0;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		@include max-screen(670px){
+			bottom: 5%;
 		}
 	}
 	&__dots{

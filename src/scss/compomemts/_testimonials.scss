@@ -21,6 +21,11 @@
 			background-size: contain;
 			background-image: url(../images/quotes.svg);
 			opacity: 0.21;
+			@include max-screen(480px){
+				height: 60px;
+				width: 70px;
+				margin-top: -25px;
+			}
 		}
 	}
 	&__slider{
@@ -30,8 +35,9 @@
 		margin: auto;
 	}
 	&__text{
-		//display: block;
+		display: block;
 		max-width: 767px;
+		min-width: 280px;
 		width: 100%;
 		color: $cl3;
 		font-family: $text-font, sans-serif;
@@ -57,6 +63,9 @@
 		height: 100%;
 		display: flex;
 		align-items: center;
+		@include max-screen(991px){
+			display: none;
+		}
 	}
 	&__link{
 		opacity: 0.7;

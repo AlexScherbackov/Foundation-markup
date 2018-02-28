@@ -1,4 +1,5 @@
 div.mobile_menu#mobile-menu
-	each  href, prop in nav
-		div.col-md-4.fl_aic_jcc
-			a.mobile_menu__link(href = href) #{prop}
+	div.container.fl_aic_jcsb.mobile_menu__wrap
+		each  href, prop in nav
+			div.fl_aic_jcc
+				a.mobile_menu__link(href = href) #{prop}

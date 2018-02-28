@@ -1,18 +1,30 @@
 .map{
 	display: flex;
+	min-height: 380px;
+
 	&__content{
 		width: 40%;
 		padding: 150px 80px;
+		@include max-screen(768px){
+			padding: 100px 50px;
+		}
+		@include max-screen(480px){
+			padding: 50px 30px;
+		}
 	}
 	&__container{
 		width: 60%;
+		
 	}
 	&__inner{
 		width: 100%;
-		height: 480px;
+		height: 100%;
 	}
 	&__title{
-
+		@include max-screen(768px){
+			font-size: em(32px);
+			line-height: 38px;
+		}
 	}
 	&__subtitle{
 			max-width: 250px;

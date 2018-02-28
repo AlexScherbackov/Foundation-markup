@@ -7,10 +7,10 @@ section.gallery#gallery
 			div.gallery__collapse-wrapper
 				div.row
 					each item in galleryContent
-						div.col-md-4
+						div.col-lg-4.col-md-6.col-sm-12.gallery__item-wrapp
 							div.gallery__item
 								div.gallery__poster
-									img(src=item.img)
+									img.gallery__img(src=item.img)
 								div.gallery__project-info
 									h2.base-title.base-title--type2.base-title--white #{item.title}
 									p.gallery__item-text #{item.text}

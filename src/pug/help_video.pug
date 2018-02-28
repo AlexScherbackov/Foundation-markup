@@ -5,8 +5,8 @@ section.help-video
 		div.help-video__content
 			div.row
 				each item in helpVideos
-					div.col-md-4
+					div.col-md-4.help-video__wrapp
 						div.help-video__item
 							div.help-video__poster
-								img(src=item.img)
+								img.help-video__img(src=item.img)
 							span.help-video__title #{item.title}

@@ -8,15 +8,24 @@
 	text-transform: uppercase;
 	text-align: center;
 	margin: 0;
+	@include max-screen(480px){
+		font-size: em(38px);
+	}
 	&--type1{
 		font-size: em(42px);
 		letter-spacing: 2px;
 		line-height: 32px;
+		@include max-screen(480px){
+			font-size: em(32px);
+		}
 	}
 	&--type2{
 		font-size: em(32px);
 		letter-spacing: 2px;
 		line-height: 24px;
+		@include max-screen(480px){
+			font-size: em(24px);
+		}
 	}
 	&--blue{
 		color: $cl1;	
@@ -35,4 +44,7 @@
 	text-align: center;
 	max-width: 665px;
 	margin: em(15px) auto;
+	@include max-screen(480px){
+		font-size: em(12px);
+	}
 }

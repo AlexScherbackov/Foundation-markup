@@ -34,6 +34,10 @@
 		font-size: em(42px);
 		font-weight: 400;
 		line-height: 42px;
+		@include max-screen(480px){
+			font-size: em(24px);
+			line-height: 24px;
+		}
 	}
 	&__btn{
 		margin-top: 27px;

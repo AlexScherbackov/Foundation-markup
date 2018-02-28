@@ -5,10 +5,10 @@ svg4everybody();
 // @include('DinamicStyleWorker.js')
 // @include('GoogleMaps.js')
 // @include('PlaginsInitialisation.js')
-
+// @include('Navigator.js')
 const _initialize = {
  options: {
-  colIndent: 30,
+  colIndent: 20,
   mapProps: {
     center: {
       lat: 35.607682, 
@@ -29,17 +29,17 @@ init(){
   _initialize._bindsEvent();
   _initialize._initSliders();
   _initialize._initMaps();
-  _initialize._initReadMore();
+  /*_initialize._initReadMore();*/
 },
 _bindsEvent(){
-  DinamicStyleWorker.eventListning(
+ Navigator.eventListning(
    '#mobile-menu-btn',
    'click', 
    DinamicStyleWorker.elementClassToggle,
    null, 'mobile-menu-btn', 'mobile-menu', 'open'
    );
 
-  DinamicStyleWorker.eventListning(
+  Navigator.eventListning(
    window,
    'resize',
    ()=>{	
@@ -51,47 +51,22 @@ _bindsEvent(){
  null
  );
 
-  DinamicStyleWorker.eventListning(
+ Navigator.eventListning(
     window,
     'load', 
-    ()=>{
-      let colHeight = 0;
-      const $galleryItems = $('.gallery__item');
-
-      if ($galleryItems.length) {
-        const firstItemHeight = $galleryItems.first().height();
-        if (firstItemHeight) {
-          colHeight = firstItemHeight + _initialize.options.colIndent;
-        }
-      }
-
-      if (colHeight) {
-        $('.gallery__collapse-wrapper').height(colHeight);
-      }
-
-      $('#gallary-trigger').on('click', function () {
-        const colOpenHeight = $(this).parents('.gallery__content').find('.row').height();
-        const colContainer = $(this).parents('.gallery__content').find('.gallery__collapse-wrapper');
-
-        if (colContainer.height() != colOpenHeight) {
-          colContainer.css("height", colOpenHeight);
-          $(this).text('Hide projects');
-        } else {
-          if (colHeight) {
-            colContainer.css("height", colHeight);
-            $(this).text('view all projects');
-          }
-        }
-
-      })
-    });
-
+    DinamicStyleWorker.showGallery
+  );
+ Navigator.eventListning(
+    window,
+    'resize', 
+    DinamicStyleWorker.showGallery
+  );
   document.querySelectorAll('.navigate__link').forEach(
     (element)=>{
-      DinamicStyleWorker.eventListning(
+      Navigator.eventListning(
         element,
         'click',
-        DinamicStyleWorker.scrollToId,
+        Navigator.scrollToId,
         null, element
       )
     }
@@ -115,7 +90,7 @@ _initSliders(){
     ['.testimonials__slider', '.testimonials__control--left', '.testimonials__control--right'],
     {
       items: 1,
-      autoplay: true,
+      autoplay: false,
       loop: true,
       rewind: false,
       autoplayHoverPause: true,

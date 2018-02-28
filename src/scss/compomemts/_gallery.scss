@@ -1,5 +1,11 @@
 .gallery{
 	padding: 90px 0px 73px;
+	@include max-screen(991px){
+		padding: 60px 0px 40px;
+	}
+	@include max-screen(480px){
+		padding: 40px 0px 30px;
+	}
 	&__content{
 		padding: 18px 0;
 	}
@@ -7,20 +13,31 @@
 		overflow: hidden;
 		transition: 1s;
 		margin-top: 40px;
-		height: 260px;
+	}
+	&__item-wrapp{
+		margin-bottom: 40px;
 	}
 	&__item{
 		border-radius: 4px;
 		overflow: hidden;
 		position: relative;
 		box-shadow: 0 10px 17px rgba(0,0,0, 0.15);
-		margin-bottom: 46px;
+	
 		max-height: 230px;
 		height: 100%;
+		@include max-screen(768px){
+			max-height: 380px;
+		
+		}
 	}
 	&__poster{
 		position: relative;
+		height: 100%;
 		object-fit: cover;
+		
+	}
+	&__img{
+		height: 100%;
 	}
 	&__project-info{
 		position: absolute;
@@ -63,7 +80,7 @@
 		}
 	}
 	&__btn{
-		margin: 10px auto;
+		margin: 10px auto 0;
 		border: none;
 		display: block;
 		outline: none;

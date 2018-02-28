@@ -4,44 +4,38 @@ class DinamicStyleWorker{
 		document.querySelector(`#${elemEventId}`).classList.toggle(className);
 		document.querySelector(`#${elementTargetId}`).classList.toggle(className);
 	}
+	static showGallery(){
+		let colHeight = 0;
+      const $galleryItems = $('.gallery__item');
 
-	static eventListning(selector, event, callback, ...props){
-		
-		const elem = typeof selector == 'string' ? document.querySelector(selector) : selector;
-		
-		elem.addEventListener(
-			event,
-			(event) => {
-				event.preventDefault();
-				callback.call(...props);
-			} 
-		)	
-	}
-	static scrollToId(element){
-	
-		const targetElement = document.querySelector(`#${element.getAttribute('href')}`);
+      if ($galleryItems.length) {
+        const firstItemHeight = $galleryItems.first().height();
+        console.log(firstItemHeight)
+        if (firstItemHeight) {
+          colHeight = firstItemHeight + _initialize.options.colIndent;
+        }
+      }
 
-		if(window.pageYOffset < targetElement.offsetTop){
-			let i = 0;
-			setTimeout(function tick(){
-				window.scrollTo(0,i);
-				if(i<=targetElement.offsetTop){
-					i+=10;
-					setTimeout(tick, 1);
-				}
-			}, 1)
-		} else {
-			let i = window.pageYOffset;
-			setTimeout(function tick(){
-				window.scrollTo(0,i);
-				if(i>=targetElement.offsetTop){
-					i-=10;
-					setTimeout(tick, 1);
-				}
-			}, 1)
-		}
+      if (colHeight) {
+        $('.gallery__collapse-wrapper').height(colHeight);
+      }
+
+      $('#gallary-trigger').on('click', function () {
+        const colOpenHeight = $(this).parents('.gallery__content').find('.row').height();
+        const colContainer = $(this).parents('.gallery__content').find('.gallery__collapse-wrapper');
+
+        if (colContainer.height() != colOpenHeight) {
+          colContainer.css("height", colOpenHeight);
+          $(this).text('Hide projects');
+        } else {
+          if (colHeight) {
+            colContainer.css("height", colHeight);
+            $(this).text('view all projects');
+          }
+        }
+
+      })
 	}
-		
 }
 
 
